@@ -1,0 +1,298 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: rgba(220, 152, 244, 0.49);
+  color: #fff;
+}
+
+.timerObject {
+  width: 400px;
+  height: 345px;
+  position: relative;
+}
+
+.timerObject .borderCircle {
+  background-image: linear-gradient(
+    rgba(241, 178, 120, 1),
+    rgba(254, 225, 198, 0.7505),
+    rgba(227, 165, 107, 0.6458),
+    rgba(243, 203, 165, 0.7697)
+  );
+  width: 305px;
+  height: 305px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timerObject .borderCircle .innerCircle {
+  background-image: linear-gradient(
+    rgba(0, 255, 240, 1),
+    rgba(70, 255, 244, 0.72),
+    rgba(0, 255, 240, 0.52),
+    rgba(105, 248, 213, 1),
+    rgba(87, 242, 186, 1),
+    rgba(60, 251, 193, 0.74),
+    rgba(19, 245, 137, 0.5)
+  );
+  width: 252px;
+  height: 261px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timerObject .borderCircle .innerCircle .countDownZone {
+  background-image: linear-gradient(
+    rgba(168, 192, 252, 0.25),
+    rgba(246, 143, 248, 0.15),
+    rgba(229, 118, 248, 0.2),
+    rgba(150, 196, 252, 0.3)
+  );
+  width: 186px;
+  height: 60px;
+  position: absolute;
+  top: 33.33%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timerObject .borderCircle .innerCircle .countDownZone:hover {
+  background-image: linear-gradient(
+    rgba(168, 192, 252, 0.4),
+    rgba(246, 143, 248, 0.2),
+    rgba(229, 118, 248, 0.3),
+    rgba(150, 196, 252, 0.5)
+  );
+  display: block;
+}
+
+.timerObject .borderCircle .innerCircle .countDownZone .countDown {
+  text-align: center;
+  color: rgba(238, 56, 56, 0.89);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 60px;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timerObject .borderCircle .innerCircle .countDownZone:hover .countDown {
+  color: rgba(255, 25, 25, 0.9);
+}
+
+.todoObject {
+  width: 400px;
+  height: 180px;
+  position: relative;
+}
+
+.todoObject .taskList {
+  width: 280px;
+  height: 175px;
+  border-radius: 4%;
+  background-color: rgba(255, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.todoObject .taskList .item {
+  display: flex;
+  width: inherit;
+  height: 30px;
+  margin: 10px auto auto auto;
+}
+
+.todoObject .taskList .item .isDone {
+  background-image: linear-gradient(
+    rgba(215, 171, 231, 0.4),
+    rgba(181, 180, 231, 0.2),
+    rgba(177, 170, 228, 0.2),
+    rgba(212, 162, 231, 0.4)
+  );
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  margin: auto 5px auto 6px;
+}
+
+.todoObject .taskList .item .descriptionObject {
+  background-image: linear-gradient(
+    rgba(207, 235, 252, 0.3),
+    rgba(200, 216, 216, 0.3),
+    rgba(170, 204, 199, 0.3),
+    rgba(204, 235, 255, 0.3)
+  );
+  width: 80%;
+  height: 30px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.todoObject .taskList .item .descriptionObject:hover {
+    background-image: linear-gradient(
+      rgba(207, 235, 252, 0.5),
+      rgba(200, 216, 216, 0.5),
+      rgba(170, 204, 199, 0.5),
+      rgba(204, 235, 255, 0.5)
+    );
+  }
+
+.todoObject .taskList .item .descriptionObject .content {
+  text-align: center;
+  color: rgba(238, 56, 56, 0.89);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: inherit;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  transform: translate(-50%, -50%);
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+input#check {
+  position: absolute;
+  opacity: 0;
+}
+
+input#check:checked + label svg path {
+  stroke-dashoffset: 0;
+}
+
+input#check:focus + label {
+  transform: scale(1);
+}
+
+#check + label {
+  --d: 30px;
+  background-image: linear-gradient(
+    rgba(215, 171, 231, 0.4),
+    rgba(181, 180, 231, 0.2),
+    rgba(177, 170, 228, 0.2),
+    rgba(212, 162, 231, 0.4)
+  );
+  display: block;
+  width: var(--d);
+  height: var(--d);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin: auto 5px auto 6px;
+}
+#check + label:hover {
+    background-image: linear-gradient(
+      rgba(215, 171, 231, 0.8),
+      rgba(181, 180, 231, 0.4),
+      rgba(177, 170, 228, 0.4),
+      rgba(212, 162, 231, 0.8)
+    );
+  }
+
+#check + label:active {
+  transform: scale(1.05);
+  border-radius: 15px;
+}
+
+#check + label svg {
+  pointer-events: none;
+}
+
+#check + label svg path {
+    fill: none;
+    stroke: #45cf87;
+    stroke-width: 4px;
+    stroke-linecap: revert;
+    stroke-linejoin: round;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 101;
+    transition: all 300ms cubic-bezier(1, 0, 0.37, 0.91);
+}
+
+
+
+
+.input {
+	 position: relative;
+	 font-size: 1.5em;
+	 background: linear-gradient(21deg, #10abff, #1beabd);
+	 padding: 3px;
+	 display: inline-block;
+	 border-radius: 9999em;
+}
+ .input *:not(span) {
+	 position: relative;
+	 display: inherit;
+	 border-radius: inherit;
+	 margin: 0;
+	 border: none;
+	 outline: none;
+	 padding: 0 0.325em;
+	 z-index: 1;
+}
+ .input *:not(span):focus + span {
+	 opacity: 1;
+	 transform: scale(1);
+}
+ .input span {
+	 transform: scale(0.993, 0.94);
+	 transition: transform 0.5s, opacity 0.25s;
+	 opacity: 0;
+	 position: absolute;
+	 z-index: 0;
+	 margin: 4px;
+	 left: 0;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 border-radius: inherit;
+	 pointer-events: none;
+	 box-shadow: inset 0 0 0 3px #fff, 0 0 0 4px #fff, 3px -3px 30px #1beabd, -3px 3px 30px #10abff;
+}
+ html {
+	 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+	 line-height: 1.5;
+	 font-size: 1em;
+}
+ body {
+	 text-align: center;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ html, body {
+	 height: 100%;
+}
+ input {
+	 font-family: inherit;
+	 line-height: inherit;
+	 color: #2e3750;
+	 min-width: 12em;
+}
+ ::placeholder {
+	 color: #cbd0d5;
+}
+ html::after {
+	 content: '';
+	 background: linear-gradient(21deg, #10abff, #1beabd);
+	 height: 3px;
+	 width: 100%;
+	 position: absolute;
+	 left: 0;
+	 top: 0;
+}
+ 

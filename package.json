@@ -1,0 +1,16 @@
+{
+  "name": "actual-snake-draw-8qwqr",
+  "productName": "actual-snake-draw-8qwqr",
+  "description": "My Electron application description",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "mac",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "15.0.0"
+  }
+}
